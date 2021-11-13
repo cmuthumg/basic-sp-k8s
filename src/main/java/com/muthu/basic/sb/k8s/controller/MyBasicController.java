@@ -10,6 +10,7 @@ public class MyBasicController {
 
 	@GetMapping("/greeting")
 	public String greeting() {
-		return "Welcome Spring Boot in Docker and Kubernate !!";
+		String hostName = System.getenv("HOSTNAME");
+		return "Muthu : Welcome Spring Boot in Docker and Kubernate and hostname is "+hostName+" !!";
 	}
 }
