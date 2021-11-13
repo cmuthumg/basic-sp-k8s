@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment    
+metadata:              
+  name: basic-sb-k8s
+spec:                
+  selector:         
+    matchLabels:
+      app: basic-sb-k8s
+  replicas: 1
+  template:
+    metadata:
+      labels:        
+        app: basic-sb-k8s
+    spec:
+      containers:
+        - name: basic-sb-k8s
+          image: cmuthumg/basic-sb-k8s
+          ports:
+            - containerPort: 8080
